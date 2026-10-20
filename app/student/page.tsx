@@ -114,11 +114,17 @@ const pathname = usePathname();
 const activeTab =
   pathname === "/student"
     ? "Overview"
-    : pathname === "/student/assignments"
+    : pathname.startsWith("/student/assignments")
       ? "Assignments"
-      : pathname === "/student/grades"
+      : pathname.startsWith("/student/grades")
         ? "Grades"
-        : "Overview";
+        : pathname.startsWith("/student/courses")
+          ? "My Courses"
+          : pathname.startsWith("/student/timetable")
+            ? "Timetable"
+            : pathname.startsWith("/student/settings")
+              ? "Settings"
+              : "Overview";
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [completed, setCompleted] = useState<number[]>([0]);

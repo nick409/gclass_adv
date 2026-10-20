@@ -1,0 +1,56 @@
+@import "tailwindcss";
+
+:root {
+  --background: #171715;
+  --foreground: #F2F0E9;
+  --card: #20201C;
+  --card-foreground: #F2F0E9;
+  --primary: #B9C69A;
+  --primary-foreground: #171715;
+  --secondary: #292923;
+  --secondary-foreground: #F2F0E9;
+  --muted: #24241F;
+  --muted-foreground: #A5A49B;
+  --accent: #D5AE84;
+  --accent-foreground: #171715;
+  --border: #37372F;
+  --input: #37372F;
+  --ring: #B9C69A;
+  --destructive: #E58C83;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+html { min-height: 100%; background: var(--background); }
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+::selection { background: #B9C69A; color: #171715; }
+input, textarea, select { color-scheme: dark; }
+button, input, textarea, select { font: inherit; }
+:focus-visible { outline: 2px solid var(--ring); outline-offset: 3px; }
+
+
+/* Motion system: quiet, responsive, and respectful of reduced-motion preferences */
+@keyframes gclass-fade-up {
+  from { opacity: 0; transform: translate3d(0, 12px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
+}
+@keyframes gclass-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes gclass-modal-in {
+  from { opacity: 0; transform: translate3d(0, 10px, 0) scale(.985); }
+  to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+}
+@keyframes gclass-soft-pulse {
+  0%, 100% { box-shadow: 0 0 0 0 #B9C69A00; }
+  50% { box-shadow: 0 0 0 5px #B9C69A0D; }
+}
